@@ -3,6 +3,9 @@ const morgan = require('morgan')
 
 const app = express()
 
+const rotaDenuncias = require('./routes/denuncias')
+const rotaUsuarios = require('./routes/usuarios')
+
 app.use(morgan('dev'))
 
 app.use(express.urlencoded({extended: false}))
@@ -24,6 +27,9 @@ app.use((req, res, next) => {
 
     next()
 })
+
+app.use('/usuarios', rotaUsuarios)
+app.use('/denuncias', rotaDenuncias)
 
 app.use((req, res, next) => {
     const erro = new Error('Não encontrado')
