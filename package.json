@@ -1,0 +1,27 @@
+{
+  "name": "aps-api",
+  "version": "1.0.0",
+  "description": "API da APS do 8º Semestre de Ciência da Computação",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "API",
+    "NodeJs",
+    "REST"
+  ],
+  "author": "José Mateus Matioli Alves",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
