@@ -1,29 +1,19 @@
-exports.getUsuarios = (req, res, next) => {
+exports.loginUsuarios = (req, res, next) => {
+
+    const dados = req.body
+
     return res.status(200).send({
-        mensagem: 'GET tudo nos conformes'
+        mensagem: 'LOGIN tudo nos conformes',
+        usuario: dados
     })
 }
 
-exports.getByIdUsuarios = (req, res, next) => {
-    return res.status(200).send({
-        mensagem: 'GET:id tudo nos conformes'
-    })
-}
+exports.cadastroUsuarios = (req, res, next) => {
 
-exports.postUsuarios = (req, res, next) => {
-    return res.status(200).send({
-        mensagem: 'POST tudo nos conformes'
-    })
-}
+    const dados = req.body
 
-exports.patchUsuarios = (req, res, next) => {
     return res.status(200).send({
-        mensagem: 'PATCH tudo nos conformes'
-    })
-}
-
-exports.deleteUsuarios = (req, res, next) => {
-    return res.status(200).send({
-        mensagem: 'DELETE tudo nos conformes'
+        mensagem: 'CADASTRO tudo nos conformes',
+        usuario: dados
     })
 }
