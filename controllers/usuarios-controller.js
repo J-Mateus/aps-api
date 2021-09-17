@@ -5,7 +5,7 @@ const mysql = require('../mysql').pool
 exports.cadastroUsuarios = (req, res, next) => {
 
     mysql.getConnection((err, conn) => {
-        if(err) {return res.status(500).send({ error: error })}
+        if(err) {return res.status(500).send({ error: err })}
 
         conn.query('SELECT * FROM usuarios WHERE email = ?', [req.body.email], (error, results) => {
             if(error) {return res.status(500).send({ error: error })}
@@ -80,6 +80,7 @@ exports.loginUsuarios = (req, res, next) => {
                     })
                     return res.status(200).send({
                          mensagem: 'Autenticado com sucesso',
+                         id_usuario: results[0].id_usuarios,
                          token: token
                         })
                 }
