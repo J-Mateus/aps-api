@@ -64,7 +64,7 @@ exports.getByIdDenuncias = (req, res, next) => {
             }
 
             return res.status(200).send({
-                data: result
+                data: result[0]
             })
 
         })
