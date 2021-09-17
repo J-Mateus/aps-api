@@ -81,7 +81,7 @@ exports.loginUsuarios = (req, res, next) => {
                     return res.status(200).send({
                          mensagem: 'Autenticado com sucesso',
                          id_usuario: results[0].id_usuarios,
-                         id_usuario: results[0].nome,
+                         nome: results[0].nome,
                          token: token
                         })
                 }
