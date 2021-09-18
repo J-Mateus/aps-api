@@ -20,7 +20,7 @@ exports.getDenuncias = (req, res, next) => {
                     ON u.id_usuarios = d.usuarios_id_usuarios
                 WHERE u.id_usuarios = ?`
 
-        conn.query(SQL, [req.body.id_usuario], (error, result, fields) => {
+        conn.query(SQL, [req.query.id_usuario], (error, result, fields) => {
             if(error) return res.status(500).send({ error: error })
             conn.release()
 
@@ -53,7 +53,7 @@ exports.getByIdDenuncias = (req, res, next) => {
                 ON u.id_usuarios = d.usuarios_id_usuarios
             WHERE u.id_usuarios = ? AND d.id_denuncias = ?`
 
-        conn.query(SQL, [req.body.id_usuario, req.params.id], (error, result, fields) => {
+        conn.query(SQL, [req.query.id_usuario, req.params.id], (error, result, fields) => {
             if(error) return res.status(500).send({ error: error })
             conn.release()
 
@@ -167,7 +167,7 @@ exports.patchDenuncias = (req, res, next) => {
 }
 
 exports.deleteDenuncias = (req, res, next) => {
-    const idUsuario = req.body.id_usuario
+    const idUsuario = req.query.id_usuario
     const idDenuncia = req.params.id
 
 
