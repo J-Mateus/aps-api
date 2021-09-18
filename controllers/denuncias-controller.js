@@ -91,7 +91,7 @@ exports.postDenuncias = (req, res, next) => {
 
 
         conn.query(SQL, [
-            req.body.id_usuario,
+            req.query.id_usuario,
             req.body.nome,
             req.body.telefone,
             req.body.logradouro,
@@ -121,7 +121,7 @@ exports.postDenuncias = (req, res, next) => {
 
 exports.patchDenuncias = (req, res, next) => {
     
-    const idUsuario = req.body.id_usuario
+    const idUsuario = req.query.id_usuario
     const idDenuncia = req.params.id
     const dados = req.body
 
